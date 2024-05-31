@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 typedef struct {
     char name[20];
@@ -9,7 +10,6 @@ typedef struct {
     char grid[3][3];
 } Board;
 
-
 void printBoard(Board *board) {
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -17,6 +17,56 @@ void printBoard(Board *board) {
         }
         printf("\n");
     }
+}
+
+const char* checkWin(Board *board) {
+    // Check rows for win
+    for (int i = 0; i < 3; i++) {
+        if (board->grid[i][0] != '#' &&
+            board->grid[i][0] == board->grid[i][1] &&
+            board->grid[i][0] == board->grid[i][2]) {
+            return "win";
+        }
+    }
+
+    // Check columns for win
+    for (int j = 0; j < 3; j++) {
+        if (board->grid[0][j] != '#' &&
+            board->grid[0][j] == board->grid[1][j] &&
+            board->grid[0][j] == board->grid[2][j]) {
+            return "win";
+        }
+    }
+
+    // Check main diagonal for win
+    if (board->grid[0][0] != '#' &&
+        board->grid[0][0] == board->grid[1][1] &&
+        board->grid[0][0] == board->grid[2][2]) {
+        return "win";
+    }
+
+    // Check anti-diagonal for win
+    if (board->grid[0][2] != '#' &&
+        board->grid[0][2] == board->grid[1][1] &&
+        board->grid[0][2] == board->grid[2][0]) {
+        return "win";
+    }
+
+    // Check for draw
+    int isDraw = 1;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            if (board->grid[i][j] == '#') {
+                isDraw = 0; // Board is not full, game continues
+                break;
+            }
+        }
+    }
+    if (isDraw) {
+        return "draw"; // Draw
+    }
+
+    return " "; // No winner yet
 }
 
 void playerInput(Board *board, Player *player) {
@@ -36,7 +86,7 @@ void playerInput(Board *board, Player *player) {
 
     if (board->grid[row][col] != '#') {
         printf("That box is already occupied. Please select another one.\n");
-        playerInput(board, player); // Ask for input again
+        playerInput(board, player); 
         return;
     }
 
@@ -44,21 +94,44 @@ void playerInput(Board *board, Player *player) {
     board->grid[row][col] = player->marker;
 }
 
-
-void playerMoves(char matrix[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
-            matrix[i][j] = i * 3 + j;
-        }
-    }
-}
-
 int main() {
     Player player1, player2;
     Board board = { '#', '#', '#', '#', '#', '#', '#', '#', '#' };
-    printBoard(&board);
-    
-  
-    
+    // Initialize players
+    strcpy(player1.name, "Player 1");
+    player1.marker = 'X';
+    strcpy(player2.name, "Player 2");
+    player2.marker = 'O';
+
+    // Main game loop
+    int currentPlayer = 1;
+    int totalMoves = 0;
+    while (1) {
+        printBoard(&board);
+
+        Player *currentPlayerPtr = (currentPlayer == 1) ? &player1 : &player2;
+
+        playerInput(&board, currentPlayerPtr);
+        totalMoves++;
+
+        // Check for win/draw conditions
+        const char* result = checkWin(&board);
+        if (strcmp(result, "win") == 0) {
+            printBoard(&board);
+            printf("Congratulations %s wins!\n", currentPlayerPtr->name);
+            break;
+        }
+        else if (strcmp(result, "draw") == 0) {
+            printBoard(&board);
+            printf("The game is a draw!\n");
+            break;
+        }
+
+        // Switch players for the next turn
+        currentPlayer = (currentPlayer == 1) ? 2 : 1;
+
+        
+    }
+
     return 0;
 }
