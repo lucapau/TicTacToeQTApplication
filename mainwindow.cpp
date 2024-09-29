@@ -8,6 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ui->playerInfo->setAlignment(Qt::AlignCenter);
+
     initializeGame();
 
     // Connect buttons to slots
@@ -20,11 +23,17 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->pushButton20, &QPushButton::clicked, [this](){ onButtonClick(2, 0); });
     connect(ui->pushButton21, &QPushButton::clicked, [this](){ onButtonClick(2, 1); });
     connect(ui->pushButton22, &QPushButton::clicked, [this](){ onButtonClick(2, 2); });
+    connect(ui->resetButton, &QPushButton::clicked, this, &MainWindow::resetGame);
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::resetGame()
+{
+    initializeGame();
 }
 
 void MainWindow::initializeGame()
@@ -40,6 +49,7 @@ void MainWindow::initializeGame()
         }
     }
     currentPlayer = 1;
+    ui->playerInfo->setText("Player 1's turn");
     updateBoardDisplay();
 }
 
@@ -48,13 +58,16 @@ void MainWindow::onButtonClick(int row, int col)
     playerInput(row, col);
     const char* result = checkWin();
     if (strcmp(result, "win") == 0) {
+        updateBoardDisplay();
         QMessageBox::information(this, "Game Over", QString("%1 wins!").arg((currentPlayer == 1) ? player1.name : player2.name));
         initializeGame();
     } else if (strcmp(result, "draw") == 0) {
+        updateBoardDisplay();
         QMessageBox::information(this, "Game Over", "The game is a draw!");
         initializeGame();
     } else {
         currentPlayer = (currentPlayer == 1) ? 2 : 1;
+        ui->playerInfo->setText(QString("Player %1's turn!").arg((currentPlayer == 1) ? player1.name : player2.name));
         updateBoardDisplay();
     }
 }

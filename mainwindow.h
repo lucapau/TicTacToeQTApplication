@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,12 +27,14 @@ public:
 
 private slots:
     void onButtonClick(int row, int col);
+    void resetGame();
 
 private:
     Ui::MainWindow *ui;
     Board board;
     Player player1, player2;
     int currentPlayer;
+    QLabel *statusLabel;
 
     void initializeGame();
     void printBoard();

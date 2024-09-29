@@ -19,12 +19,15 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: lightblue;</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>50</y>
+      <y>0</y>
       <width>641</width>
       <height>341</height>
      </rect>
@@ -41,8 +44,32 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -54,8 +81,32 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -67,8 +118,32 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -80,8 +155,38 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="minimumSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -93,8 +198,32 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -106,8 +235,32 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -119,21 +272,32 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
        <property name="text">
         <string/>
        </property>
-      </widget>
-     </item>
-     <item row="5" column="2">
-      <widget class="QPushButton" name="pushButton21">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string/>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
        </property>
       </widget>
      </item>
@@ -145,12 +309,125 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="2">
+      <widget class="QPushButton" name="pushButton21">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="baseSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    font-size: 20px;
+    background-color: #87CEEB;
+    border: 2px solid #000000;
+    border-radius: 10px;
+}
+QPushButton:pressed {
+    background-color: #4682B4;
+}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>100</width>
+         <height>100</height>
+        </size>
        </property>
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QLabel" name="playerInfo">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>380</y>
+      <width>281</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Reference Sans Serif</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel {
+    font-size: 24px;
+    color: #333333;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Player 1's turn!</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="resetButton">
+    <property name="geometry">
+     <rect>
+      <x>580</x>
+      <y>350</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MS Reference Sans Serif</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    font-size: 24px;
+    color: #333333;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Reset</string>
+    </property>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
